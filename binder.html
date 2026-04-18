@@ -431,9 +431,17 @@ async function summonByIncantation(){
     $('#seedNum').value = seed.toString();
     const hit = await resolveSeedGlobal(seed.toString());
     if (hit){
-      // Foreign cards: stash in browseCache + offer add
-      if (hit.source !== 'red-binder' && hit.card){
+      // Auto-save on summon — any card resolved goes into the binder.
+      const key = (hit.source && hit.source !== 'red-binder') ? `${hit.source}:${hit.id}` : hit.id;
+      if (hit.source && hit.source !== 'red-binder' && hit.card){
         state.browseCache.set(hit.id, hit);
+        if (!state.owned.has(key)){
+          await addToBinder(key, hit.card);
+          toast(`Saved from ${hit.source}`,'ok');
+        }
+      } else if (!state.owned.has(key) && hit.card){
+        await addToBinder(key, hit.card);
+        toast('Saved to binder','ok');
       }
       await openModal(hit);
     } else {
