@@ -1,5 +1,9 @@
 # The Red Binder
 
+<!-- rapp1:network-header:start -->
+[![RAPP/1](https://kody-w.github.io/rapp-hive-public/portfolio/badges/red-binder.svg)](https://github.com/kody-w/rapp-hive-public/blob/main/portfolio/repos/red-binder.md) · **New to RAPP?** [Start here: get your Brainstem →](https://github.com/kody-w/rapp-installer#start-here)
+<!-- rapp1:network-header:end -->
+
 **A third-party [RAPPcards](https://kody-w.github.io/RAPPcards/) binder with its own 21-card crimson forge-guild deck.**
 
 Live at **[kody-w.github.io/red-binder](https://kody-w.github.io/red-binder/)**.
